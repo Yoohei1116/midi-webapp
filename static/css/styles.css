@@ -1,0 +1,324 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #191919;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+.header h1 {
+    margin-left: 10px;
+}
+.left-content, .right-content {
+    display: flex;
+    align-items: center;
+}
+.left-content {
+    text-align: left;
+}
+.right-content {
+    text-align: right;
+}
+.btn-secondary {
+    background-color: #191919;
+    border: none;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.btn-secondary:hover{
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
+}
+
+.btn-secondary:focus{
+    background-color: #3c3c3c !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: lightgray;
+}
+.header-key {
+    color: #e3e3e3;
+    padding-right: 10px;
+    margin-top: 14%;
+}
+.header select {
+    height: 70%; 
+    text-align: left;
+    width: 80px;
+    font-size: 14px;
+    background-color: #3c3c3c;
+    color: white;
+}
+.header select:focus {
+    background-color: #3c3c3c; /* 選択時の背景色を変更 */
+    border-color: white; /* フォーカス時のボーダー色を変更 */
+    color: white;
+    box-shadow:none; /* フォーカス時のボックスシャドウを変更 */
+}
+.sidebar-container {
+    background-color: #0b0b0b; /* 背景をグレーに設定 */
+    width: 20%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.responsive-image {
+    width: 100%; /* 親要素の幅に合わせてサイズを調整 */
+    height: auto; /* 高さを自動調整 */
+}
+.responsive-image img {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    width: 100%; /* 画像の幅を親要素に合わせる */
+    height: auto; /* 画像の縦横比を維持 */
+    display: block; /* 画像をブロック要素として表示 */
+}
+.heading-with-line {
+    display: flex;
+    align-items: center;
+}
+.heading-with-line h4 {
+    margin: 0;
+    padding-right: 10px;
+}
+.heading-with-line::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: dimgray;
+}
+.sidebar-h3-input{
+    padding-left: 3%;
+    color: dimgray;
+}
+.sidebar-h3-setting{
+    padding-left: 3%;
+    color: dimgray;
+}
+.sidebar {
+    width: 100%;
+    padding: 7% 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 縦方向のスクロールバーを追加 */
+    overflow-x: hidden;
+    font-size: 16px;
+}
+/* サイドバーのスクロールバーをカスタマイズ */
+.sidebar::-webkit-scrollbar {
+    width: 10px; /* スクロールバーの幅 */
+}
+.sidebar::-webkit-scrollbar-track {
+    background: lightgray; /* スクロールバーのトラックの色 */
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: dimgray; /* スクロールバーのつまみの色 */
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #3c3c3c; /* ホバー時のつまみの色 */
+}
+.assign_key p {
+    margin: 0;
+    color: dimgray;
+    text-align: left;
+    flex: 1;
+    padding-left: 20%;
+}
+.assign_key select {
+    width: auto;
+    text-align: center;
+    background-color: #191919;
+    color: dimgray;
+    border: none;
+    border-radius: 10%;
+    flex: 1;
+    height: 30px;
+    padding-left: 0%;
+}
+.assign_key select:hover{
+    color: white;
+}
+.assign_key {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3.5% 3.5% 3.5%;
+    width: 100%;
+}
+.assign_key select option{
+    background-color: #e3e3e3;
+    color: dimgray;
+}
+.assign_key select option:hover{
+    color: white;
+}
+.canvas-container, .buttons-container{
+    width: 100%;
+}
+.canvas-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin: 0;
+}
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* ボタンを中央に揃える */
+    background-color: black; /* 背景をグレーに設定 */
+}
+.btn-custom {
+    flex: 1 1 auto; /* ボタンを横に12個並べる */
+    width: 5%; /* 固定幅を設定 */
+    margin: 0.5%;
+    aspect-ratio: 1 / 1; /* 正方形にする */
+    border-color: dimgray;
+    background-color: black;
+    color: dimgray;
+}
+.btn-custom:hover {
+    color: lightgray;
+    border-color: lightgray;
+    background-color: black;
+}
+.btn-custom:active,.btn-custom.active 
+{
+    color: white !important;
+    border-color: white !important;
+    background-color: black !important;
+    outline: none; /* デフォルトのフォーカススタイルを無効にする */
+}
+.pc-ad {
+    display: block;
+    background-color:  #0b0b0b;
+    color: dimgray;
+    padding: 10px;
+    text-align: center;
+    height: 100vh;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.pc-ad p{
+    padding-top: 50vh;
+}
+
+.mobile-ad {
+    display: block;
+    background-color:  #0b0b0b;
+    color: dimgray;
+    padding: 10px;
+    text-align: center;
+    height: 11vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.mobile-ad p{
+    padding-top: 1.5vh;
+}
+
+@media (min-width: 768px) {
+    .mobile-ad{
+        display: none;
+    }
+    .header {
+        width: 85%;
+        height: 10vh;
+    }
+    .header h1 {
+        font-size: 30px;
+    }
+    .header-key {
+        font-size: 18px;
+        text-align: center;
+    }
+    .header select {
+        margin-right: 5%;
+    }
+    .main-container {
+        flex-direction: row;
+        height: 90vh;
+    }
+    .sidebar-container {
+        width: 15%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .content-container {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+    .canvas-container {
+        height: 75%;
+    }
+    .buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 0.5%;
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+    }
+}
+@media (max-width: 767px) {
+    .sidebar-container {
+        display: none; /* サイドバーを表示しない */
+    }
+    .pc-ad {
+        display: none;
+    }
+    .header {
+        height: 9vh;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .content-container {
+        height: 80vh;
+    }
+    .canvas-container {
+        order: 1; /* 図形のコンテナを上に配置 */
+        height: 65%;
+        flex: 0 0 auto; /* 固定サイズにする */
+    }
+    .buttons-container {
+        height: 35%;
+        order: 2; /* ボタンのコンテナを下に配置 */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex: 0 0 auto; /* 固定サイズにする */
+        padding-bottom: 2%;
+    }
+    .btn-custom {
+        flex: 1 1 15%; /* ボタンを横に6個並べる */
+        margin: 0.5%;
+        aspect-ratio: 1 / 1; /* 正方形にする */
+    }
+}

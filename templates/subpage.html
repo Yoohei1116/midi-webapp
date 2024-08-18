@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DegreeAnalyzer</title>
+    <link rel="stylesheet" href="../static/css/styles_subpage.css">
+    <script src="../static/subpage.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="title-container">
+                <a href="{{ url_for('index') }}" class="title-link"><h1 id="title">DegreeAnalyzer</h1></a>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="#guide" id="guide-link">使い方</a></li>
+                        <li><a href="#privacy" id="privacy-link">プライバシーポリシー</a></li>
+                        <li><a href="#contact" id="contact-link">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="language-switcher">
+                <span id="ja-button" onclick="setLanguage('ja')">日本語</span>
+                <span id="en-button" onclick="setLanguage('en')">English</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="guide">
+            <h2 id="guide-title"><i class="icon"></i>使い方</h2>
+            <p id="guide-content">
+                1. セレクトボックスでキーを選択します<br>
+                2. 音を入力します (MIDIも対応しています)<br>
+                3. 入力された音の度数が表示されます
+            </p>
+        </section>
+        <section id="privacy">
+            <h2 id="privacy-title"><i class="icon"></i>プライバシーポリシー</h2>
+            <p id="privacy-content">
+                このプライバシーポリシーは、DegreeAnalyzerの利用に関する情報の収集、使用、および共有方法について説明します。<br><br>
+                1. データの収集<br>
+                DegreeAnalyzerでは、利用者の個人データを保持しません。ただし、お問い合わせフォームを通じて提供された情報は、対応のために一時的に保存されることがあります。<br><br>
+                2. データの使用<br>
+                お問い合わせフォームを通じて提供された情報は、利用者からの問い合わせに対応するためにのみ使用されます。<br><br>
+                3. データの共有<br>
+                DegreeAnalyzerでは、利用者の個人データを第三者と共有することはありません。ただし、法的要請があった場合には、必要に応じて情報を開示することがあります。<br><br>
+                4. 広告<br>
+                将来的に、DegreeAnalyzerではGoogle AdSenseによる広告を表示する予定です。これに伴い、Googleが利用者のデータを収集する場合があります。詳細については、Googleのプライバシーポリシーをご参照ください。<br><br>
+                5. プライバシーポリシーの変更<br>
+                このプライバシーポリシーは、必要に応じて変更されることがあります。変更があった場合は、当ページでお知らせします。<br><br>
+            </p>
+        </section>
+        <section id="contact">
+            <h2 id="contact-title"><i class="icon"></i>お問い合わせ</h2>
+            <form action="{{ url_for('submit_contact') }}" method="post">
+                <label for="name" id="name-label">名前:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email" id="email-label">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message" id="message-label">メッセージ:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" id="submit-button">送信</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 DegreeAnalyzer</p>
+    </footer>
+</body>
+</html>
