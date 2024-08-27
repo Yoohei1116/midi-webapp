@@ -67,6 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const centerY = canvas.height / 2;
         const radius = Math.min(canvas.width, canvas.height) / 3;
 
+        ctx.font = '20px Arial';
+        if (window.innerWidth < 767) {
+            ctx.font = '15px Arial';
+        }
+
+
         for (let i = 0; i < 12; i++) {
             const startAngle = ((i - 2.5) * Math.PI) / 6 + 0.015; // 隙間をつける
             const endAngle = (((i - 2.5) + 1) * Math.PI) / 6 - 0.015; // 隙間をつける
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const textX = centerX + textRadius * Math.cos((startAngle + endAngle) / 2);
                 const textY = centerY + textRadius * Math.sin((startAngle + endAngle) / 2);
                 ctx.fillStyle = 'lightgray';
-                ctx.font = '20px Arial';
+                
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(texts[i], textX, textY);
@@ -113,20 +119,27 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
         ctx.globalAlpha = 1.0;
 
+        let font_around = '20px Arial';
+        let font_center = '120px Arial';
+        if (window.innerWidth < 767) {
+            font_around = '15px Arial';
+            font_center = '85px Arial';
+        }
+
         if (progress === 1) {
             // 文字を白で描画
             const textRadius = (baseRadius + radius) / 2;
             const textX = centerX + textRadius * Math.cos((startAngle + endAngle) / 2);
             const textY = centerY + textRadius * Math.sin((startAngle + endAngle) / 2);
             ctx.fillStyle = 'white';
-            ctx.font = '20px Arial';
+            ctx.font = font_around;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText(texts[index], textX, textY);
 
             // 絶対音の記載
             ctx.fillStyle = '#191919'
-            ctx.font = '120px Arial'; // base radios からに変更 
+            ctx.font = font_center;
             ctx.fillText(noteName, centerX, centerY);
         }
     }
@@ -202,24 +215,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('button[id^="input_"]');
     // 各ボタンに対してアクティブ状態の処理を追加
     buttons.forEach(button => {
-        button.addEventListener('mousedown', function(event) {
+        const activateButton = function(event) {
             event.preventDefault(); //クリック時の::activeを無効化
             if (!keyPressed){
                 buttons.forEach(btn => btn.classList.remove('active')); // すべてのボタンからアクティブクラスを削除
                 button.classList.add('active');// クリックされたボタンにアクティブクラスを追加
-        }});
-    
-        button.addEventListener('mouseup', function() {
+            }
+        };
+
+        const deactivateButton = function() {
             if (!keyPressed){
                 // クリックを外すとアクティブクラスを削除
                 button.classList.remove('active');
-        }});
+            }
+        };
 
-        button.addEventListener('mouseleave', function() {
-            if (!keyPressed){
-                // ボタンからマウスが離れたときにアクティブクラスを削除
-                button.classList.remove('active');
-        }});
+        button.addEventListener('mousedown', activateButton);
+        button.addEventListener('touchstart', activateButton);
+
+        button.addEventListener('mouseup', deactivateButton);
+        button.addEventListener('touchend', deactivateButton);
+
+        button.addEventListener('mouseleave', deactivateButton);
+        button.addEventListener('touchcancel', deactivateButton);
     });
 
     // アクティブクラスが追加されたときの処理関数を定義
@@ -297,9 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
     } else {
         // MIDI Web APIがサポートされていない場合の処理
-        const header = document.getElementById('header');
-        header.innerHTML += '<p>このブラウザはMIDI Web APIに対応していません。別のブラウザを使用してください。</p>';
-        alert('このブラウザはMIDI Web APIに対応していません。別のブラウザを使用してください。');
+        alert('このブラウザはMIDI Web APIに対応していません/This browser does not support MIDI input.');
     }
 
     function onMIDISuccess(midiAccess) {
