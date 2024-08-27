@@ -15,6 +15,7 @@ body, html {
     justify-content: space-between;
     background-color: #191919;
     padding: 10px;
+    width: 100%;
     color: white;
     text-align: center;
 }
@@ -297,8 +298,10 @@ body, html {
         height: 9vh;
     }
     .header h1 {
-        font-size: 20px;
+        padding-top: 2%;
+        font-size: 17px;
     }
+
     .content-container {
         height: 80vh;
     }
@@ -320,5 +323,15 @@ body, html {
         flex: 1 1 15%; /* ボタンを横に6個並べる */
         margin: 0.5%;
         aspect-ratio: 1 / 1; /* 正方形にする */
+    }
+    #key {
+        width: 50%;
+    }
+    .help {
+        font-size: 15px;
+    }
+    .dropdown .btn {
+        font-size: 12px; /* ボタンのフォントサイズを小さくする */
+        padding: 4px 8px; /* ボタンのパディングを調整して小さくする */
     }
 }
