@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.font = '20px Arial';
         if (window.innerWidth < 767) {
-            ctx.font = '15px Arial';
+            ctx.font = '18px Arial';
         }
 
 
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let font_around = '20px Arial';
         let font_center = '120px Arial';
         if (window.innerWidth < 767) {
-            font_around = '15px Arial';
-            font_center = '85px Arial';
+            font_around = '18px Arial';
+            font_center = '90px Arial';
         }
 
         if (progress === 1) {
@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!keyPressed){
                 buttons.forEach(btn => btn.classList.remove('active')); // すべてのボタンからアクティブクラスを削除
                 button.classList.add('active');// クリックされたボタンにアクティブクラスを追加
+                button.blur(); // ボタンからフォーカスを外す
             }
         };
 
