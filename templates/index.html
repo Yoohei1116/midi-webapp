@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout with Bootstrap</title>
+    <title>DegreeVisualizer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -11,15 +11,15 @@
 <body>
     <div class="header">
         <div class="left-content">
-            <h1>DegreeAnalyzer</h1>
+            <h1>DegreeVisualizer</h1>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle help" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" title="使い方">
                     <i class="fas fa-info-circle"></i> Help
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#guide" >User guide：使い方</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#privacy">Privacy policy：プライバシーポリシー</a></li>
-                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#contact">Contact：お問い合わせ</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#guide onclick="sessionStorage.setItem('fromOrigin', 'true');"" >User guide：使い方</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#privacy onclick="sessionStorage.setItem('fromOrigin', 'true');"">Privacy policy：プライバシーポリシー</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('subpage') }}#contact onclick="sessionStorage.setItem('fromOrigin', 'true');"">Contact：お問い合わせ</a></li>
                 </ul>
             </div>
         </div>
