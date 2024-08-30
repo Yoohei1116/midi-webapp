@@ -288,6 +288,9 @@ body, html {
     }
 }
 @media (max-width: 767px) {
+    body{
+        overflow: hidden;
+    }
     .sidebar-container {
         display: none; /* サイドバーを表示しない */
     }
@@ -298,7 +301,8 @@ body, html {
         height: 9vh;
     }
     .header h1 {
-        padding-top: 2%;
+        margin-left: 5px;
+        padding-top: 3%;
         font-size: 17px;
     }
 
@@ -325,13 +329,19 @@ body, html {
         aspect-ratio: 1 / 1; /* 正方形にする */
     }
     #key {
-        width: 50%;
+        width: auto;
+        font-size: 12px;
     }
     .help {
         font-size: 15px;
     }
     .dropdown .btn {
         font-size: 12px; /* ボタンのフォントサイズを小さくする */
-        padding: 4px 8px; /* ボタンのパディングを調整して小さくする */
+        padding: 4px 4px; /* ボタンのパディングを調整して小さくする */
+    }
+    .dropdown-menu{
+        font-size: 12px;
+        width: auto;
+        text-align: left;
     }
 }
