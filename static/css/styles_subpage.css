@@ -154,3 +154,10 @@ footer {
     margin-top: 2rem;
     border-top: 1px solid #333;
 }
+
+@media (max-width: 767px) {
+    .nav-container a {
+        font-size: 11px;
+        padding: 10px 6px;
+    }
+}
